@@ -3,19 +3,19 @@ import Login from "../src/screens/Login";
 import SignUp from "../src/screens/SignUp";
 import ForgetPassword from "../src/screens/ForgetPassword";
 import Dashboard from "./components/Dashboard";
+import UserList from "./Pages/UserList";
+import Sidebar from "./components/Sidebar";
+import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
-    <div>
-      <Router>
-        <Routes>
-          <Route path="/" index element={<Login />} />
-          <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/forget-password" element={<ForgetPassword />} />
-          <Route path="/dashboard/default" element={<Dashboard />} />
-          {/* Add more routes as needed */}
-        </Routes>
-      </Router>
-    </div>
+    <>
+    <BrowserRouter>
+      <div className="App">
+        <Sidebar />
+       {/* <Idletimecontainer/> */}
+      </div>
+    </BrowserRouter>
+  </>
   );
 }
 
