@@ -12,182 +12,50 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import SearchIcon from '@mui/icons-material/Search';
 import TextField from '@mui/material/TextField';
 import { useState } from "react";
+import Box from '@mui/material/Box'
+import Card from '@mui/material/Card'
+import CardHeader from '@mui/material/CardHeader'
+import { DataGrid } from '@mui/x-data-grid'
+import Grid from '@mui/material/Grid'
+import { styled } from '@mui/material/styles'
+import Typography from '@mui/material/Typography'
+
+//custom component imports
+
+import PageHeader from '../components/PageHeader'
+
+import BasicTable from './table/mui/BasicTable'
+import DenseTable from "./table/mui/DenseTable";
+import StickyHeaderTable from "./table/mui/StickyHeaderTable";
+// import CollapsibleTable from "./table/mui/CollapsibleTable";
+
+
+const LinkStyled = styled(Link)(({ theme }) => ({
+  textDecoration: 'none',
+  color: theme.palette.primary.main
+}))
 
 
 
-const columns = [
-  { id: "userName", label: "User Name", minWidth: 170 },
-  { id: "customerName", label: "Customer Name", minWidth: 100 },
-  {
-    id: "displayName",
-    label: "Display Name",
-    minWidth: 170,
-    align: "right",
-    format: (value) => value.toLocaleString("en-US"),
-  },
-  {
-    id: "createdDate",
-    label: "Created Date",
-    minWidth: 200,
-    align: "right",
-    format: (value) => value.toLocaleString("en-US"),
-  },
-  {
-    id: "lastLogin",
-    label: "Last Login",
-    minWidth: 170,
-    align: "right",
-    format: (value) => value.toFixed(2),
-  },
-  {
-    id: "action",
-    label: "Action",
-    minWidth: 170,
-    align: "right",
-    format: (value) => value.toFixed(2),
-  },
-];
-
-function createData(
-  userName,
-  customerName,
-  displayName,
-  createdDate,
-  lastLogin,
-  action
-) {
-  // const density = population / size;
-  return {
-    userName,
-    customerName,
-    displayName,
-    createdDate,
-    lastLogin,
-    action,
-  };
+function createData(id, name, calories, fat, carbs, protein) {
+  return { id, name, calories, fat, carbs, protein };
 }
 
 const rows = [
-  createData(
-    "Susan",
-    "Susan S",
-    1324171354,
-    3287263,
-    "12-87-2022",
-    <button className="btn btn-outline-danger btn-sm">Click</button>
-  ),
-  createData(
-    "China",
-    "CN",
-    1403500365,
-    9596961,
-    "12-87-2022",
-    <button className="btn btn-outline-danger btn-sm">Click</button>
-  ),
-  createData(
-    "Italy",
-    "IT",
-    60483973,
-    301340,
-    "12-87-2022",
-    <button className="btn btn-outline-danger btn-sm">Click</button>
-  ),
-  createData(
-    "United States",
-    "US",
-    327167434,
-    9833520,
-    "12-87-2022",
-    <button className="btn btn-outline-danger btn-sm">click</button>
-  ),
-  createData(
-    "Canada",
-    "CA",
-    37602103,
-    9984670,
-    "12-87-2022",
-    <button className="btn btn-outline-danger btn-sm">Click</button>
-  ),
-  createData(
-    "Australia",
-    "AU",
-    25475400,
-    7692024,
-    "12-87-2022",
-    <button className="btn btn-outline-danger btn-sm">Click</button>
-  ),
-  createData(
-    "Germany",
-    "DE",
-    83019200,
-    357578,
-    "12-87-2022",
-    <button className="btn btn-outline-danger btn-sm">Click</button>
-  ),
-  createData(
-    "Ireland",
-    "IE",
-    4857000,
-    70273,
-    "12-87-2022",
-    <button className="btn btn-outline-danger btn-sm">Click</button>
-  ),
-  createData(
-    "Mexico",
-    "MX",
-    126577691,
-    1972550,
-    "12-87-2022",
-    <button className="btn btn-outline-danger btn-sm">Click</button>
-  ),
-  createData(
-    "Japan",
-    "JP",
-    126317000,
-    377973,
-    "12-87-2022",
-    <button className="btn btn-outline-danger btn-sm">Click</button>
-  ),
-  createData(
-    "France",
-    "FR",
-    67022000,
-    640679,
-    "12-87-2022",
-    <button className="btn btn-outline-danger btn-sm">Click</button>
-  ),
-  createData(
-    "United Kingdom",
-    "GB",
-    67545757,
-    242495,
-    "12-87-2022",
-    <button className="btn btn-outline-danger btn-sm">Click</button>
-  ),
-  createData(
-    "Russia",
-    "RU",
-    146793744,
-    17098246,
-    "12-87-2022",
-    <button className="btn btn-outline-danger btn-sm">Click</button>
-  ),
-  createData(
-    "Nigeria",
-    "NG",
-    200962417,
-    923768,
-    "12-87-2022",
-    <button className="btn btn-outline-danger btn-sm">Click</button>
-  ),
-  createData(
-    "Brazil",
-    "BR",
-    210147125,
-    8515767,
-    "12-87-2022",
-    <button className="btn btn-outline-danger btn-sm">Click</button>
-  ),
+  createData(1, 'Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData(2, 'Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData(3, 'Eclair', 262, 16.0, 24, 6.0),
+  createData(4, 'Cupcake', 305, 3.7, 67, 4.3),
+  createData(5, 'Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+
+const columns = [
+  { field: 'name', headerName: 'Name', flex: 1 },
+  { field: 'calories', headerName: 'Calories', flex: 1 },
+  { field: 'fat', headerName: 'Fat', flex: 1 },
+  { field: 'carbs', headerName: 'Carbs', flex: 1 },
+  { field: 'protein', headerName: 'Protein', flex: 1 },
 ];
 
 export default function UserList() {
@@ -208,6 +76,10 @@ export default function UserList() {
     setSearchText(event.target.value);
   };
 
+
+
+  const filteredRows = rows.filter(row => row.name.toLowerCase().includes(searchText.toLowerCase()));
+
   return (
     <>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -226,24 +98,84 @@ export default function UserList() {
                 onChange={handleSearchChange}
                 variant="outlined"
                 size="small"
-              
                 InputProps={{
                   startAdornment: (
-                    <endAdornment>
-                      <SearchIcon/>
-                    </endAdornment>
+                    <div>
+                      <SearchIcon />
+                    </div>
                   ),
                 }}
               />
-              <Link to="/users/createuser" style={{marginLeft:"10px"}}>
+              <Link to="/users/createuser" style={{ marginLeft: "10px" }}>
                 <button className="btn btn-outline-danger ">Create User</button>
               </Link>
             </div>
           </>
         </div>
       </div>
-
-      <h1>Table here</h1>
+      <Grid container spacing={6}>
+      <PageHeader
+        title={
+          <Typography variant='h4'>
+            <LinkStyled href='https://mui.com/material-ui/react-table/' target='_blank'>
+              MUI Tables
+            </LinkStyled>
+          </Typography>
+        }
+        subtitle={
+          <Typography sx={{ color: 'text.secondary' }}>
+            Tables display sets of data. They can be fully customized
+          </Typography>
+        }
+      />
+      <Grid item xs={12}>
+        <Card>
+          <CardHeader title='Basic Table' />
+          <BasicTable />
+        </Card>
+      </Grid>
+      <Grid item xs={12}>
+        <Card>
+          <CardHeader title='Dense Table' />
+          <DenseTable />
+        </Card>
+      </Grid>
+      <Grid item xs={12}>
+        <Card>
+          <CardHeader title='Sticky Header' />
+          <StickyHeaderTable />
+        </Card>
+      </Grid>
+      {/* <Grid item xs={12}>
+        <Card>
+          <CardHeader title='Collapsible Table' />
+          <CollapsibleTable/>
+        </Card>
+      </Grid> */}
+      {/* <Grid item xs={12}>
+        <Card>
+          <CardHeader title='Spanning Table' />
+          <TableSpanning />
+        </Card>
+      </Grid>
+      <Grid item xs={12}>
+        <Card>
+          <CardHeader title='Customized Table' />
+          <TableCustomized />
+        </Card>
+      </Grid>
+      <Grid item xs={12}>
+        <Card>
+          <TableSortSelect />
+        </Card>
+      </Grid> */}
+    </Grid>
     </>
   );
 }
+
+
+
+
+
+
