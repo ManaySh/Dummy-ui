@@ -53,20 +53,39 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTable } from '@fortawesome/free-solid-svg-icons';
+import KeyboardCommandKeyIcon from '@mui/icons-material/KeyboardCommandKey';
+import TextFieldsIcon from '@mui/icons-material/TextFields';
+import ViewDayIcon from '@mui/icons-material/ViewDay';
 
 const SidebarItems = [
 
   {
-    label: "User",
+    label: "Tables",
     path: "/userList",
-    icon: <PeopleAltIcon />,
+    icon:   <FontAwesomeIcon icon={faTable} />,
   },
   {
     label: "Buttons",
     path: "/buttons",
+    icon: <KeyboardCommandKeyIcon/>,
+  },
+  {
+    label: "Textfields",
+    path: "/buttons",
+    icon: <TextFieldsIcon/>,
+  },
+  {
+    label: "Cards",
+    path: "/buttons",
+    icon: <ViewDayIcon />,
+  },
+  {
+    label: "Toasts",
+    path: "/buttons",
     icon: <PeopleAltIcon />,
   },
-
 
 ];
 

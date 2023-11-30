@@ -4,7 +4,8 @@ import Login from "../screens/Login";
 import SignUp from "../screens/SignUp";
 import ForgetPassword from "../screens/ForgetPassword"
 import UserList from "../Pages/UserList";
-import Buttons from '../Pages/Buttons';
+import Buttons from '../Pages/buttons/index';
+
 const MainRoutes = () => {
     return (
         <div>
