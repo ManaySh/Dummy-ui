@@ -5,6 +5,8 @@ import SignUp from "../screens/SignUp";
 import ForgetPassword from "../screens/ForgetPassword"
 import UserList from "../Pages/UserList";
 import Buttons from '../Pages/buttons/index';
+import Cards from '../Pages/cards/index';
+
 
 const MainRoutes = () => {
     return (
@@ -19,6 +21,7 @@ const MainRoutes = () => {
                 <Route path="/forget-password" element={<ForgetPassword />} />
                 <Route path="/userList" element={<UserList />} />
                 <Route path="/buttons" element={<Buttons />} />
+                <Route path="/cards" element={<Cards />} />
             </Routes>
         </div>
     )
