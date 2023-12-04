@@ -20,13 +20,10 @@ import DenseTable from "./table/mui/DenseTable";
 import StickyHeaderTable from "./table/mui/StickyHeaderTable";
 // import CollapsibleTable from "./table/mui/CollapsibleTable";
 
-
 const LinkStyled = styled(Link)(({ theme }) => ({
   textDecoration: 'none',
   color: theme.palette.primary.main
 }))
-
-
 
 function createData(id, name, calories, fat, carbs, protein) {
   return { id, name, calories, fat, carbs, protein };
@@ -39,7 +36,6 @@ const rows = [
   createData(4, 'Cupcake', 305, 3.7, 67, 4.3),
   createData(5, 'Gingerbread', 356, 16.0, 49, 3.9),
 ];
-
 
 const columns = [
   { field: 'name', headerName: 'Name', flex: 1 },
@@ -66,8 +62,6 @@ export default function UserList() {
   const handleSearchChange = (event) => {
     setSearchText(event.target.value);
   };
-
-
 
   const filteredRows = rows.filter(row => row.name.toLowerCase().includes(searchText.toLowerCase()));
 
@@ -164,9 +158,3 @@ export default function UserList() {
     </>
   );
 }
-
-
-
-
-
-
