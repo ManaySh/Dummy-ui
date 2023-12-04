@@ -5,7 +5,8 @@ import SignUp from "../screens/SignUp";
 import ForgetPassword from "../screens/ForgetPassword"
 import UserList from "../Pages/UserList";
 import Buttons from '../Pages/buttons/index';
-
+import Switches from '../Pages/switches';
+import Ratings from '../Pages/rating';
 const MainRoutes = () => {
     return (
         <div>
@@ -19,6 +20,8 @@ const MainRoutes = () => {
                 <Route path="/forget-password" element={<ForgetPassword />} />
                 <Route path="/userList" element={<UserList />} />
                 <Route path="/buttons" element={<Buttons />} />
+                <Route path="/switch" element={<Switches />} />
+                <Route path="/ratings" element={<Ratings />} />
             </Routes>
         </div>
     )

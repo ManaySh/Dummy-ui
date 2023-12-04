@@ -58,7 +58,8 @@ import { faTable } from '@fortawesome/free-solid-svg-icons';
 import KeyboardCommandKeyIcon from '@mui/icons-material/KeyboardCommandKey';
 import TextFieldsIcon from '@mui/icons-material/TextFields';
 import ViewDayIcon from '@mui/icons-material/ViewDay';
-
+import EditAttributesIcon from '@mui/icons-material/EditAttributes';
+import StarOutlineOutlinedIcon from '@mui/icons-material/StarOutlineOutlined';
 const SidebarItems = [
 
   {
@@ -86,7 +87,16 @@ const SidebarItems = [
     path: "/buttons",
     icon: <PeopleAltIcon />,
   },
-
+  {
+    label: "switches",
+    path: "/switch",
+    icon: <EditAttributesIcon />,
+  },
+  {
+    label: "rating",
+    path: "/ratings",
+    icon: <StarOutlineOutlinedIcon />,
+  },
 ];
 
 const drawerWidth = 220;
