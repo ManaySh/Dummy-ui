@@ -79,7 +79,7 @@ const SidebarItems = [
   },
   {
     label: "Cards",
-    path: "/buttons",
+    path: "/cards",
     icon: <ViewDayIcon />,
   },
   {
@@ -156,6 +156,7 @@ const Drawer = styled(MuiDrawer, {
   flexShrink: 0,
   whiteSpace: "nowrap",
   boxSizing: "border-box",
+  backgroundColor: theme.palette.background.paper,
   ...(open && {
     ...openedMixin(theme),
     "& .MuiDrawer-paper": openedMixin(theme),
