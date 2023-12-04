@@ -24,7 +24,7 @@ const Login = () => {
     navigate("/sign-up");
   };
   const handleClcik = () => {
-    navigate("/dashboard/default");
+    navigate("/userList");
   };
   return (
     <div

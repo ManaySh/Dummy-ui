@@ -1,10 +1,3 @@
-// import React from "react";
-
-// const Dashboard = () => {
-//   return <div>Dashboard</div>;
-// };
-
-// export default Dashboard;
 
 import React, { useState, useRef, useEffect } from "react";
 import { styled, useTheme } from "@mui/material/styles";
