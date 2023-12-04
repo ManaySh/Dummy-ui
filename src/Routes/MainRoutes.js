@@ -4,6 +4,7 @@ import DialogInfo from "../Pages/DialogInfo";
 import AlertInfo from "../Pages/AlertInfo";
 import Switches from "../Pages/Switches";
 import Rating from "../Pages/Rating";
+
 function MainRoutes() {
   return (
     <Routes>
