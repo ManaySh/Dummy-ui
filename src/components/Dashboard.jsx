@@ -184,6 +184,10 @@ export default function Dashboard() {
       label: "Buttons",
       path: "/advance/buttons",
     },
+    {
+      label: "Progress",
+      path: "/advance/progress",
+    },
   ];
 
   return (
@@ -365,7 +369,7 @@ export default function Dashboard() {
             sx={{
               flexGrow: 1,
               p: 3,
-              backgroundColor: "#EEF2F6",
+              backgroundColor: "#f0f1f2",
               minHeight: "100vh",
             }}
           >

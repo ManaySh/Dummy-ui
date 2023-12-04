@@ -8,6 +8,9 @@ import Cards from "../Pages/cards/index";
 import UserList from "../Pages/UserList";
 import Buttons from "../Pages/buttons/index";
 import PaginationInfo from "../Pages/PaginationInfo";
+import Progress from "../Pages/progress/index";
+
+
 function MainRoutes() {
   return (
     <Routes>
@@ -19,6 +22,7 @@ function MainRoutes() {
       <Route path="/advance/userlist" element={<UserList />} />
       <Route path="/advance/pagination" element={<PaginationInfo />} />
       <Route path="/advance/buttons" element={<Buttons />} />
+      <Route path="/advance/progress" element={<Progress/>} />
     </Routes>
   );
 }

@@ -11,7 +11,6 @@ import IconLabelButtons from '../../views/components/buttons/IconLabelButtons';
 
 const Buttons = () => {
   return (
-    <div style={{ backgroundColor: '#f5f5f5', padding: '20px' }}>
       <Grid container spacing={3} className='match-height'>
         <Grid item xs={12}>
           <Card>
@@ -105,54 +104,13 @@ const Buttons = () => {
         </Card>
       </Grid>
       </Grid>
-    </div>
+
   );
 }
 
 export default Buttons;
 
 
-
-// // ** MUI Imports
-// import Grid from '@mui/material/Grid'
-// import Typography from '@mui/material/Typography'
-// import BasicButtons from '../../views/components/buttons/BasicButtons'
-// import { Card, CardContent, CardHeader, Box } from '@mui/material'
-
-// const Buttons = () => {
-//   return (
-//     <Grid container spacing={3} className='match-height'>
-//       <Grid item xs={12}>
-//         <Card>
-//           <CardHeader title='Basic Button' />
-//           <CardContent>
-//             <Typography variant="body1" style={{ marginBottom: '10px' }}>
-//               The Button comes with three variants: text (default), contained, and outlined.
-//             </Typography>
-//             <Box textAlign="center">
-//               <BasicButtons />
-//             </Box>
-//           </CardContent>
-//         </Card>
-//       </Grid>
-//       <Grid item xs={12}>
-//         <Card>
-//           <CardHeader title='Basic Button' />
-//           <CardContent>
-//             <Typography variant="body1" style={{ marginBottom: '10px' }}>
-//               The Button comes with three variants: text (default), contained, and outlined.
-//             </Typography>
-//             <Box textAlign="center">
-//               <BasicButtons />
-//             </Box>
-//           </CardContent>
-//         </Card>
-//       </Grid>
-//     </Grid>
-//   )
-// }
-
-// export default Buttons;
 
 
 
