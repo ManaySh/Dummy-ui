@@ -47,6 +47,8 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import MainRoutes from "../Routes/MainRoutes";
 import Login from "../screens/Login";
+import ForgetPassword from "../screens/ForgetPassword";
+import SignUp from "../screens/SignUp";
 import {
   List,
   ListItemButton,
