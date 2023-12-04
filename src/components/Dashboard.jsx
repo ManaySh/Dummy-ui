@@ -172,6 +172,18 @@ export default function Dashboard() {
       label: "Ratings",
       path: "/advance/ratings",
     },
+    {
+      label: "Cards",
+      path: "/advance/cards",
+    },
+    {
+      label: "UserList",
+      path: "/advance/userlist",
+    },
+    {
+      label: "Buttons",
+      path: "/advance/buttons",
+    },
   ];
 
   return (
