@@ -7,10 +7,10 @@ import Rating from "../Pages/Rating";
 import Cards from "../Pages/cards/index";
 import UserList from "../Pages/UserList";
 import Buttons from "../Pages/buttons/index";
-import PaginationInfo from "../Pages/PaginationInfo";
 import Paginations from "../Pages/paginations";
 import Accordion from "../Pages/accordion";
 import LandingPage from "../Pages/landingPage";
+import Progress from "../Pages/progress/index";
 
 function MainRoutes() {
   return (
@@ -24,6 +24,7 @@ function MainRoutes() {
       <Route path="/components/pagination" element={<Paginations />} />
       <Route path="/components/buttons" element={<Buttons />} />
       <Route path="/components/accordion" element={<Accordion />} />
+      <Route path="/components/progress" element={<Progress/>}/>
       <Route path="/landingPage" element={<LandingPage/>}/>
     </Routes>
   );

@@ -304,6 +304,7 @@ import Login from "../screens/Login";
 import ForgetPassword from "../screens/ForgetPassword";
 import SignUp from "../screens/SignUp";
 
+
 // Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTable } from '@fortawesome/free-solid-svg-icons';
@@ -316,6 +317,7 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import AlarmAddIcon from '@mui/icons-material/AlarmAdd';
 import AlbumIcon from '@mui/icons-material/Album';
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import {
   List,
   ListItemButton,
@@ -365,6 +367,11 @@ const SidebarItems = [
     path: "/components/buttons",
     icon: <KeyboardCommandKeyIcon/>,
   },
+  {
+    label: "Progress",
+    path: "/components/progress",
+    icon: <RestartAltIcon/>
+  }
 ];
 
 const drawerWidth = 220;
