@@ -184,15 +184,9 @@ export default function Dashboard() {
       path: "/advance/buttons",
     },
     {
-<<<<<<< HEAD
       label: "Accordion",
       path: "/advance/accordion"
     }
-=======
-      label: "Progress",
-      path: "/advance/progress",
-    },
->>>>>>> 00088e0ccdc30e13016cf400556a5a3c3bb551e0
   ];
 
   return (
