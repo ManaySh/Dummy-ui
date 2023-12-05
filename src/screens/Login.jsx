@@ -243,7 +243,11 @@ const Login = () => {
 
         if (matchingUser) {
           console.log("Credentials are valid:", matchingUser);
+<<<<<<< HEAD
           navigate("/components/tables");
+=======
+          navigate("/advance/dialog-info");
+>>>>>>> 00088e0ccdc30e13016cf400556a5a3c3bb551e0
         } else {
           // Credentials are not valid, handle accordingly
           setError(true);
@@ -276,7 +280,11 @@ const Login = () => {
       <div
         style={{
           width: "490px",
+<<<<<<< HEAD
           height: "89vh",
+=======
+          height: "90vh",
+>>>>>>> 00088e0ccdc30e13016cf400556a5a3c3bb551e0
           backgroundColor: "#ffffff",
           borderRadius: "10px",
         }}
@@ -324,7 +332,11 @@ const Login = () => {
                   color: "#673AB7",
                 }}
               >
+<<<<<<< HEAD
                 Email:&nbsp;john@gmail.com / Pass:&nbsp;m38rmF$
+=======
+                Email:&nbsp;jhon@gmail.com / Pass:&nbsp;m38rmF$
+>>>>>>> 00088e0ccdc30e13016cf400556a5a3c3bb551e0
               </span>
             </div>
           </div>
