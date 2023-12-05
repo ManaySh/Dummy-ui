@@ -184,6 +184,10 @@ export default function Dashboard() {
       label: "Buttons",
       path: "/advance/buttons",
     },
+    {
+      label: "Accordion",
+      path: "/advance/accordion"
+    }
   ];
 
   return (

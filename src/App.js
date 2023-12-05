@@ -5,11 +5,13 @@ import ForgetPassword from "../src/screens/ForgetPassword";
 import Dashboard from "./components/Dashboard";
 import DialogInfo from "./Pages/DialogInfo";
 import Profile from "./Pages/DialogInfo";
+import Sidebar from "./components/Sidebar";
 function App() {
   return (
     <div>
       <Router>
-        <Dashboard />
+        {/* <Dashboard /> */}
+        <Sidebar/>
       </Router>
     </div>
   );
