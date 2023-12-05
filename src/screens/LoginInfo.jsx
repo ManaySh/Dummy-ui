@@ -34,7 +34,7 @@ export default function LoginInfo() {
         onClick={handleClick}
         style={{ cursor: "pointer" }}
       >
-        <Avatar sx={{ marginRight: "30px" }}>S</Avatar>
+        <Avatar sx={{ marginRight: "30px" }}>J</Avatar>
         {/* <AccountCircleIcon sx={{ fontSize: "38px", marginRight: "20px" }} /> */}
       </span>
       <Popover
@@ -62,10 +62,10 @@ export default function LoginInfo() {
                   fontSize: "13px",
                 }}
               >
-                <Avatar sx={{ padding: "28px" }}>S</Avatar>
+                <Avatar sx={{ padding: "28px" }}>J</Avatar>
                 <div style={{ marginLeft: "10px" }}>
-                  <div style={{ fontWeight: "bold" }}>Susan</div>
-                  <div style={{ color: "#716f71" }}>Susan@gmail.com</div>
+                  <div style={{ fontWeight: "bold" }}>John</div>
+                  <div style={{ color: "#716f71" }}>John@gmail.com</div>
                 </div>
               </div>
               <Divider style={{ marginTop: "3px" }} />

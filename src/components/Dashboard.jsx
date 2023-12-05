@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -20,8 +19,8 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import Slide from "@mui/material/Slide";
-import WhatshotIcon from "@mui/icons-material/Whatshot";
-import EditIcon from "@mui/icons-material/Edit";
+
+import EditIcon from "@mui/icons-material/DesignServices";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import Login from "../screens/Login";
@@ -296,11 +295,20 @@ export default function Dashboard() {
                   color: "#666",
                   fontWeight: "600",
                   marginTop: "-15px",
+                  display: open ? "block" : "none",
                 }}
               >
                 UI Element
               </span>
-              <div style={{ display: "flex" }} onClick={handelDropdownClick}>
+              <div
+                style={{
+                  display: "flex",
+                  marginLeft: "-10px",
+                  //border: "2px solid maroon",
+                  borderRadius: "10px",
+                }}
+                onClick={handelDropdownClick}
+              >
                 <IconButton style={{ color: dropdownOpen ? "#673AB7" : "" }}>
                   <EditIcon />
                 </IconButton>
@@ -310,6 +318,7 @@ export default function Dashboard() {
                     display: "flex",
                     flexDirection: "column",
                     marginTop: "20px",
+                    marginLeft: "14px",
                   }}
                 >
                   <span
@@ -324,7 +333,12 @@ export default function Dashboard() {
                     8+ Advance components
                   </span>
                 </div>
-                <IconButton>
+                <IconButton
+                  style={{
+                    color: dropdownOpen ? "#673AB7" : "",
+                    fontWeight: dropdownOpen ? "600" : "",
+                  }}
+                >
                   {dropdownOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
                 </IconButton>
               </div>
@@ -370,7 +384,7 @@ export default function Dashboard() {
             sx={{
               flexGrow: 1,
               p: 3,
-              backgroundColor: "#EEF2F6",
+              backgroundColor: "#f0f1f2",
               minHeight: "100vh",
             }}
           >
