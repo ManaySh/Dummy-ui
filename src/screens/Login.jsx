@@ -71,7 +71,7 @@ const Login = () => {
       <div
         style={{
           width: "490px",
-          height: "90vh",
+          height: "89vh",
           backgroundColor: "#ffffff",
           borderRadius: "10px",
         }}
