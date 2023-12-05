@@ -8,6 +8,7 @@ import Cards from "../Pages/cards/index";
 import UserList from "../Pages/UserList";
 import Buttons from "../Pages/buttons/index";
 import PaginationInfo from "../Pages/PaginationInfo";
+import Checkboxes from "../Pages/checkboxes";
 function MainRoutes() {
   return (
     <Routes>
@@ -19,6 +20,7 @@ function MainRoutes() {
       <Route path="/advance/userlist" element={<UserList />} />
       <Route path="/advance/pagination" element={<PaginationInfo />} />
       <Route path="/advance/buttons" element={<Buttons />} />
+      <Route path="/checkboxes" element={<Checkboxes />} />
     </Routes>
   );
 }

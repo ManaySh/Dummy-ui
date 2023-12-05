@@ -184,6 +184,11 @@ export default function Dashboard() {
       label: "Buttons",
       path: "/advance/buttons",
     },
+    {
+      label: "checkbox",
+      path: "/checkboxes",
+     
+    },
   ];
 
   return (
