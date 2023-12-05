@@ -184,9 +184,10 @@ export default function Dashboard() {
       path: "/advance/buttons",
     },
     {
-      label: "Accordion",
-      path: "/advance/accordion"
-    }
+      label: "checkbox",
+      path: "/checkboxes",
+     
+    },
   ];
 
   return (
