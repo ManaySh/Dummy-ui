@@ -10,9 +10,13 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [person, setPerson] = useState({ email: "", password: "" });
+  const [error, setError] = useState(false);
+
   const navigate = useNavigate();
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -24,8 +28,36 @@ const Login = () => {
     navigate("/sign-up");
   };
   const handleClcik = () => {
-    navigate("/userList");
+    axios
+      .get("https://fakestoreapi.com/users")
+      .then((res) => {
+        const matchingUser = res.data.find(
+          (user) =>
+            user.email === person.email && user.password === person.password
+        );
+
+        if (matchingUser) {
+          console.log("Credentials are valid:", matchingUser);
+          navigate("/advance/dialog-info");
+        } else {
+          // Credentials are not valid, handle accordingly
+          setError(true);
+          console.log("Invalid credentials");
+        }
+      })
+      .catch((error) => {
+        // Handle errors
+        console.error("Error fetching data:", error);
+      });
   };
+  const handleChange = (e) => {
+    e.preventDefault();
+    const name = e.target.name;
+    const value = e.target.value;
+    setPerson({ ...person, [name]: value });
+    console.log(name, value);
+  };
+
   return (
     <div
       style={{
@@ -39,7 +71,7 @@ const Login = () => {
       <div
         style={{
           width: "490px",
-          height: "80vh",
+          height: "90vh",
           backgroundColor: "#ffffff",
           borderRadius: "10px",
         }}
@@ -71,8 +103,28 @@ const Login = () => {
             >
               Enter your Credential to Continue...
             </div>
+            <div
+              style={{
+                color: "#929496",
+                marginTop: "25px",
+                fontWeight: "500",
+                boxSizing: "border-box",
+              }}
+            >
+              <span
+                style={{
+                  padding: "10px",
+                  backgroundColor: "#EEF2F6",
+                  borderRadius: "5px",
+                  color: "#673AB7",
+                }}
+              >
+                Email:&nbsp;jhon@gmail.com / Pass:&nbsp;m38rmF$
+              </span>
+            </div>
           </div>
         </div>
+        <div></div>
         <div
           style={{
             display: "flex",
@@ -83,20 +135,27 @@ const Login = () => {
           <Grid container spacing={2} style={{ width: "450px" }}>
             <Grid item xs={12}>
               <TextField
-                id="outlined-basic"
+                id="email"
                 label="Email Address/Username"
                 variant="outlined"
                 size="medium"
                 fullWidth
+                name="email"
+                value={person.email}
+                onChange={handleChange}
+                style={{ marginTop: "10px" }}
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
-                id="outlined-basic"
+                id="password"
                 label="Password"
                 variant="outlined"
                 size="medium"
                 fullWidth
+                name="password"
+                value={person.password}
+                onChange={handleChange}
                 type={showPassword ? "text" : "password"}
                 InputProps={{
                   endAdornment: (
@@ -143,6 +202,11 @@ const Login = () => {
             <Grid item xs={12}>
               <div style={{ display: "grid" }}>
                 {" "}
+                {error && (
+                  <span style={{ color: "red", marginBottom: "15px" }}>
+                    invalid credentials
+                  </span>
+                )}
                 <Button
                   style={{ backgroundColor: "#673AB7", color: "#fff" }}
                   onClick={handleClcik}

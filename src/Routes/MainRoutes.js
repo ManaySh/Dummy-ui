@@ -6,7 +6,7 @@ import Switches from "../Pages/Switches";
 import Rating from "../Pages/Rating";
 import Cards from "../Pages/cards/index";
 // import UserList from "../Pages/UserList";
-import Buttons from "../Pages/buttons/index";
+//import Buttons from "../Pages/buttons/index";
 import PaginationInfo from "../Pages/PaginationInfo";
 function MainRoutes() {
   return (
@@ -18,7 +18,6 @@ function MainRoutes() {
       <Route path="/advance/cards" element={<Cards />} />
       {/* <Route path="/advance/userlist" element={<UserList />} /> */}
       <Route path="/advance/pagination" element={<PaginationInfo />} />
-      import AlertInfo from "../Pages/AlertInfo";
     </Routes>
   );
 }
