@@ -5,7 +5,7 @@ function App() {
     <div>
       <Router>
         {/* <Dashboard /> */}
-        <Sidebar/>
+        <Sidebar />
       </Router>
     </div>
   );
