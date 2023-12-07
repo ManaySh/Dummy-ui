@@ -34,7 +34,9 @@ export default function LoginInfo() {
         onClick={handleClick}
         style={{ cursor: "pointer" }}
       >
-        <Avatar sx={{ marginRight: "30px" }}>J</Avatar>
+        <Avatar sx={{ marginRight: "30px", backgroundColor: "#673AB7" }}>
+          J
+        </Avatar>
         {/* <AccountCircleIcon sx={{ fontSize: "38px", marginRight: "20px" }} /> */}
       </span>
       <Popover
@@ -52,7 +54,7 @@ export default function LoginInfo() {
           horizontal: "left",
         }}
       >
-        <Typography sx={{ width: 340 }}>
+        <Typography sx={{ width: 300 }}>
           <Card sx={{ maxWidth: 345 }} onClick={handleClose}>
             <CardContent>
               <div
@@ -62,7 +64,9 @@ export default function LoginInfo() {
                   fontSize: "13px",
                 }}
               >
-                <Avatar sx={{ padding: "28px" }}>J</Avatar>
+                <Avatar sx={{ padding: "28px", backgroundColor: "#673AB7" }}>
+                  J
+                </Avatar>
                 <div style={{ marginLeft: "10px" }}>
                   <div style={{ fontWeight: "bold" }}>John</div>
                   <div style={{ color: "#716f71" }}>John@gmail.com</div>
@@ -92,13 +96,18 @@ export default function LoginInfo() {
               }}
             >
               {/* <Link to="/users/myprofile"> */}
-                <Button size="small" style={{ color: "#ec5a02" }}>
-                  <Person2Icon />
-                  <strong> My Profile</strong>
-                </Button>
+              <Button
+                size="small"
+                style={{
+                  color: "#2499EF",
+                }}
+              >
+                <Person2Icon />
+                <strong> My Profile</strong>
+              </Button>
               {/* </Link> */}
               <Link to="/">
-                <Button size="small" style={{ color: "#ec5a02" }}>
+                <Button size="small" style={{ color: "#2499EF" }}>
                   <LogoutIcon />
                   <strong>Sign out</strong>
                 </Button>
