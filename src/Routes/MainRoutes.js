@@ -7,7 +7,8 @@ import Rating from "../Pages/Rating";
 import Cards from "../Pages/cards/index";
 import UserList from "../Pages/UserList";
 import Buttons from "../Pages/buttons/index";
-import PaginationInfo from "../Pages/PaginationInfo";
+
+import Checkboxes from "../Pages/checkboxes";
 import Paginations from "../Pages/paginations";
 import Accordion from "../Pages/accordion";
 import LandingPage from "../Pages/landingPage";

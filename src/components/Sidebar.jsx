@@ -414,6 +414,9 @@ import MainRoutes from "../Routes/MainRoutes";
 import Login from "../screens/Login";
 import ForgetPassword from "../screens/ForgetPassword";
 import SignUp from "../screens/SignUp";
+import ListItem from "@mui/material/ListItem";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import MailIcon from "@mui/icons-material/Mail";
 
 // Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -490,6 +493,17 @@ const SidebarItems = [
     label: "Buttons",
     path: "/components/buttons",
     icon: <KeyboardCommandKeyIcon />,
+  },
+  {
+    label: "Progress",
+    path: "/components/progress",
+    icon: <RestartAltIcon/>
+  },
+  {
+    label: "checkbox",
+    path: "/components/checkboxes",
+    icon: <CheckCircleIcon/>
+   
   },
 ];
 
@@ -693,7 +707,7 @@ export default function Sidebar() {
                     }}
                   >
                     {/* Icon for "Components" menu */}
-                    <PeopleAltIcon />
+                    <MicrosoftIcon />
                   </ListItemIcon>
                   <ListItemText
                     primary="Components"
@@ -703,11 +717,13 @@ export default function Sidebar() {
                       textDecoration: "none",
                     }}
                   />
+                  {componentsOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
                 </ListItemButton>
               </div>
 
               {/* Dropdown menu for "Components" */}
-              {pathname.startsWith("/components") && componentsOpen && (
+              {/* {pathname.startsWith("/components") && componentsOpen && ( */}
+              { componentsOpen && (
                 <div>
                   {SidebarItems.map((item) => (
                     <div key={item.label}>
