@@ -38,6 +38,8 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import MicrosoftIcon from '@mui/icons-material/Microsoft';
 import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
+
 import {
   List,
   ListItemButton,
@@ -72,11 +74,11 @@ const componentsItems = [
     path: "/components/ratings",
     icon: <StarOutlineOutlinedIcon />,
   },
-  {
-    label: "Cards",
-    path: "/components/cards",
-    icon: <ViewDayIcon />,
-  },
+  // {
+  //   label: "Cards",
+  //   path: "/components/cards",
+  //   icon: <ViewDayIcon />,
+  // },
   {
     label: "Tables",
     path: "/components/tables",
@@ -99,6 +101,62 @@ const componentsItems = [
    
   },
 ];
+
+const surfacesItems = [
+  // {
+  //   label: "Dialog",
+  //   path: "/surfaces/dialog-info",
+  //   icon: <AlbumIcon/>
+  // },
+  // {
+  //   label: "Alert",
+  //   path: "/surfaces/alert",
+  //   icon: <AlarmAddIcon/>
+  // },
+  // {
+  //   label: "Pagination",
+  //   path: "/surfaces/pagination",
+  //   icon: <MenuBookIcon/>
+  // },
+  // {
+  //   label: "Switches",
+  //   path: "/surfaces/switches",
+  //   icon: <EditAttributesIcon />,
+  // },
+  {
+    label: "Accordions",
+    path: "/surfaces/accordions",
+    icon: <ExpandCircleDownIcon />,
+  },
+  {
+    label: "Cards",
+    path: "/surfaces/cards",
+    icon: <ViewDayIcon />,
+  },
+  // {
+  //   label: "Tables",
+  //   path: "/surfaces/tables",
+  //   icon: <FontAwesomeIcon icon={faTable} />
+  // },
+  // {
+  //   label: "Buttons",
+  //   path: "/surfaces/buttons",
+  //   icon: <KeyboardCommandKeyIcon/>,
+  // },
+  // {
+  //   label: "Progress",
+  //   path: "/surfaces/progress",
+  //   icon: <RestartAltIcon/>
+  // },
+  // {
+  //   label: "checkbox",
+  //   path: "/surfaces/checkboxes",
+  //   icon: <CheckCircleIcon/>
+   
+  // },
+];
+
+
 
 const drawerWidth = 220;
 
@@ -171,6 +229,8 @@ export default function Sidebar() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const [componentsOpen, setComponentsOpen] = React.useState(false);
+  const [surfacesOpen, setSurfacesOpen] = React.useState(false);
+
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -183,6 +243,11 @@ export default function Sidebar() {
   const handleComponentsToggle = () => {
     setComponentsOpen(!componentsOpen);
   };
+
+  const handleSurfacesToggle = () => {
+    setSurfacesOpen(!surfacesOpen);
+  };
+
 
   const location = useLocation();
   const { pathname } = location;
@@ -355,6 +420,95 @@ export default function Sidebar() {
               { componentsOpen && (
                 <div>
                   {componentsItems.map((item) => (
+                    <div
+                      key={item.label}
+                      style={{
+                        background: pathname === item.path ? "#16669c" : "transparent",
+                        // background: pathname === item.path ? "rgb(115,103,240)" : "transparent",
+                        marginTop: "-7px",
+                      }}
+                    >
+                      <Link
+                        to={item.path}
+                        disablePadding
+                        sx={{ display: "block" }}
+                        style={{
+                          textDecoration: "none",
+                        }}
+                      >
+                        <ListItemButton
+                          sx={{
+                            minHeight: 48,
+                            justifyContent: open ? "initial" : "center",
+                            px: 4.5, // Adjust padding for dropdown items
+                          }}
+                        >
+                          <ListItemIcon
+                            sx={{
+                              minWidth: 0,
+                              mr: open ? 3 : "auto",
+                              justifyContent: "center",
+                              color: "white",
+                            }}
+                          >
+                            {item.icon}
+                          </ListItemIcon>
+                          <ListItemText
+                            primary={item.label}
+                            sx={{
+                              opacity: open ? 10 : 0,
+                              color: "white",
+                              textDecoration: "none",
+                            }}
+                          />
+                        </ListItemButton>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              )}
+              <div
+                onClick={handleSurfacesToggle}
+                style={{
+                  background:
+                    pathname.startsWith("/surfaces") && surfacesOpen
+                      ? "#16669c"
+                      : "transparent",
+                  marginTop: "-7px",
+                }}
+              >
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                      color: "white",
+                    }}
+                  >
+                    {/* Icon for "Components" menu */}
+                    <MicrosoftIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Surfaces"
+                    sx={{
+                      opacity: open ? 10 : 0,
+                      color: "white",
+                      textDecoration: "none",
+                    }}
+                  />
+                  {surfacesOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                </ListItemButton>
+              </div>
+              { surfacesOpen && (
+                <div>
+                  {surfacesItems.map((item) => (
                     <div
                       key={item.label}
                       style={{

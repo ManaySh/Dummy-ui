@@ -10,10 +10,11 @@ import Buttons from "../Pages/buttons/index";
 
 import Checkboxes from "../Pages/checkboxes";
 import Paginations from "../Pages/paginations";
-import Accordion from "../Pages/accordion";
 import LandingPage from "../Pages/landingPage";
 import Progress from "../Pages/progress/index";
 import Analytics from "../Pages/analytics";
+import Accordions from "../Pages/accordion";
+
 
 function MainRoutes() {
   return (
@@ -30,12 +31,12 @@ function MainRoutes() {
       <Route path="/components/alert" element={<AlertInfo />} />
       <Route path="/components/switches" element={<Switches />} />
       <Route path="/components/ratings" element={<Rating />} />
-      <Route path="/components/cards" element={<Cards />} />
       <Route path="/components/tables" element={<UserList />} />
       <Route path="/components/pagination" element={<Paginations />} />
       <Route path="/components/buttons" element={<Buttons />} />
-      <Route path="/components/accordion" element={<Accordion />} />
       <Route path="/components/progress" element={<Progress/>}/>
+      <Route path="/surfaces/cards" element={<Cards />} />
+      <Route path="/surfaces/accordions" element={<Accordions />} />
       <Route path="/landingPage" element={<LandingPage/>}/>
       <Route path="/analytics" element={<Analytics/>}/>
     </Routes>
