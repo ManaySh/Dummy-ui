@@ -454,6 +454,17 @@ import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MailIcon from "@mui/icons-material/Mail";
+import DynamicFormIcon from '@mui/icons-material/DynamicForm';
+import DeselectIcon from '@mui/icons-material/Deselect';
+import ToggleOnIcon from '@mui/icons-material/ToggleOn';
+import InputIcon from '@mui/icons-material/Input';
+import NotesIcon from '@mui/icons-material/Notes';
+import RttIcon from '@mui/icons-material/Rtt';
+import DateRangeIcon from '@mui/icons-material/DateRange';
+import ToggleOffIcon from '@mui/icons-material/ToggleOff';
+import FileUploadIcon from '@mui/icons-material/FileUpload';
+import LinearScaleIcon from '@mui/icons-material/LinearScale';
+import RoomServiceIcon from '@mui/icons-material/RoomService';
 const SidebarItems = [
   {
     label: "Alert",
@@ -511,6 +522,11 @@ const SidebarItems = [
     icon: <CheckCircleIcon/>
    
   },
+  {
+    label: "Snackbar",
+    path: "components/snackbar",
+    icon: <RoomServiceIcon/>
+  }
 ];
 
 const surfacesItems = [
@@ -566,6 +582,68 @@ const surfacesItems = [
    
   // },
 ];
+
+const formElementsItems = [
+  {
+    label: "Text Field",
+    path: "/form-elements/textfield",
+    icon: <TextFieldsIcon/>
+  },
+  {
+    label: "Select",
+    path: "/form-elements/select",
+    icon: <DeselectIcon/>
+  },
+  {
+    label: "Checkbox",
+    path: "/form-elements/checkbox",
+    icon: <CheckBoxIcon/>
+  },
+  {
+    label: "Radio",
+    path: "/form-elements/radio",
+    icon : <ToggleOnIcon/>
+  },
+  {
+    label: "Custom Inputs",
+    path: "/form-elements/customInput",
+    icon: <InputIcon/>
+  },
+  {
+    label: "Text Area",
+    path: "/form-elements/textArea",
+    icon: <NotesIcon/>
+  },
+  {
+    label: "Auto Complete",
+    path: "/form-elements/autoComplete",
+    icon: <RttIcon/>
+  },
+  {
+    label: "Date Pickers",
+    path: "/form-elements/datePicker",
+    icon: <DateRangeIcon/>
+  },
+  {
+    label: "Switch",
+    path : "/form-elements/switch",
+    icon : <ToggleOffIcon/>
+  },
+  {
+    label: "File Uploader",
+    path: "/form-elements/fileUploader",
+    icon: <FileUploadIcon/>
+  },
+  {
+    label: "Slider",
+    path: "/form-elements/slider",
+    icon: <LinearScaleIcon/>
+  },
+  // {
+  //   label: "Input Mask",
+  //   path: "/form-elements/inputMask"
+  // }
+]
 
 
 
@@ -643,6 +721,7 @@ export default function Sidebar() {
   const [open, setOpen] = React.useState(false);
   const [componentsOpen, setComponentsOpen] = React.useState(false);
   const [surfacesOpen, setSurfacesOpen] = React.useState(false);
+  const [formElementsOpen, setFormElementsOpen] = React.useState(false)
 
 
   const handleDrawerOpen = () => {
@@ -660,6 +739,10 @@ export default function Sidebar() {
   const handleSurfacesToggle = () => {
     setSurfacesOpen(!surfacesOpen);
   };
+
+  const handleFormElementsToggle = () => {
+    setFormElementsOpen(!formElementsOpen)
+  }
 
 
   const location = useLocation();
@@ -880,6 +963,98 @@ export default function Sidebar() {
               { surfacesOpen && (
                 <div>
                   {surfacesItems.map((item) => (
+                    <div key={item.label}>
+                      <Link
+                        to={item.path}
+                        disablePadding
+                        sx={{ display: "block" }}
+                        style={{
+                          textDecoration: "none",
+                        }}
+                      >
+                        <ListItemButton
+                          sx={{
+                            minHeight: 48,
+                            justifyContent: open ? "initial" : "center",
+                            px: 4.5, // Adjust padding for dropdown items
+
+                            display: "flex",
+                            backgroundColor:
+                              pathname === item.path
+                                ? "#F2F9FE"
+                                : "transparent",
+                          }}
+                        >
+                          <ListItemIcon
+                            sx={{
+                              minWidth: 0,
+                              mr: open ? 3 : "auto",
+                              justifyContent: "center",
+                              //color: "#8CA3BA",
+
+                              color:
+                                pathname === item.path ? "#2499EF" : "#5F748D",
+                            }}
+                          >
+                            {item.icon}
+                          </ListItemIcon>
+                          <ListItemText
+                            primary={item.label}
+                            sx={{
+                              opacity: open ? 10 : 0,
+                              color: "#8CA3BA",
+                              textDecoration: "none",
+                              color:
+                                pathname === item.path ? "#2499EF" : "#5F748D",
+                              fontWeight: "600",
+                            }}
+                          />
+                        </ListItemButton>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* form-elements */}
+
+
+                 {/* form-elements menu with dropdown effect */}
+                 <div onClick={handleFormElementsToggle}>
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                      color: "#5F748D",
+                    }}
+                  >
+                    {/* Icon for "Components" menu */}
+                    <DynamicFormIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Form Elements"
+                    sx={{
+                      opacity: open ? 10 : 0,
+                      color: "#5F748D",
+                      textDecoration: "none",
+                    }}
+                  />
+                  {formElementsOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                </ListItemButton>
+              </div>
+
+              {/* Dropdown menu for "form-elements" */}
+              { formElementsOpen && (
+                <div>
+                  {formElementsItems.map((item) => (
                     <div key={item.label}>
                       <Link
                         to={item.path}
