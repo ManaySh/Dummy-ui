@@ -604,21 +604,21 @@ const formElementsItems = [
     path: "/form-elements/radio",
     icon : <ToggleOnIcon/>
   },
-  {
-    label: "Custom Inputs",
-    path: "/form-elements/customInput",
-    icon: <InputIcon/>
-  },
-  {
-    label: "Text Area",
-    path: "/form-elements/textArea",
-    icon: <NotesIcon/>
-  },
-  {
-    label: "Auto Complete",
-    path: "/form-elements/autoComplete",
-    icon: <RttIcon/>
-  },
+  // {
+  //   label: "Custom Inputs",
+  //   path: "/form-elements/customInput",
+  //   icon: <InputIcon/>
+  // },
+  // {
+  //   label: "Text Area",
+  //   path: "/form-elements/textArea",
+  //   icon: <NotesIcon/>
+  // },
+  // {
+  //   label: "Auto Complete",
+  //   path: "/form-elements/autoComplete",
+  //   icon: <RttIcon/>
+  // },
   {
     label: "Date Pickers",
     path: "/form-elements/datePicker",
