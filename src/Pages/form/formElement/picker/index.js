@@ -10,6 +10,10 @@ import SpecificRangePicker from '../../../../views/form/formElements/picker/spec
 import CallbackPicker from '../../../../views/form/formElements/picker/callbackPicker';
 import CustomizedPicker from '../../../../views/form/formElements/picker/customizedPicker';
 import IncludeExcludePicker from '../../../../views/form/formElements/picker/includeExcludePicker';
+import LocalePicker from '../../../../views/form/formElements/picker/localePicker';
+import MonthandYearDropdownPicker from '../../../../views/form/formElements/picker/monthYeardropdownPicker';
+import MonthYearQuarterPicker from '../../../../views/form/formElements/picker/monthYearQuarterPicker';
+import OptionPicker from '../../../../views/form/formElements/picker/optionPicker';
 
 const Pickers = () => {
     return (
@@ -121,6 +125,62 @@ const Pickers = () => {
                             <CardContent>
                                 <Box textAlign="center">
                                     <IncludeExcludePicker />
+                                </Box>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                </Grid>
+            </div>
+            <div style={{ backgroundColor: '#f5f5f5', padding: '20px' }}>
+                <Grid container spacing={3} className='match-height'>
+                    <Grid item xs={12}>
+                        <Card>
+                            <CardHeader title='Locale' />
+                            <CardContent>
+                                <Box textAlign="center">
+                                    <LocalePicker />
+                                </Box>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                </Grid>
+            </div>
+            <div style={{ backgroundColor: '#f5f5f5', padding: '20px' }}>
+                <Grid container spacing={3} className='match-height'>
+                    <Grid item xs={12}>
+                        <Card>
+                            <CardHeader title='Month and Year Dropdowns' />
+                            <CardContent>
+                                <Box textAlign="center">
+                                    <MonthandYearDropdownPicker />
+                                </Box>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                </Grid>
+            </div>
+            <div style={{ backgroundColor: '#f5f5f5', padding: '20px' }}>
+                <Grid container spacing={3} className='match-height'>
+                    <Grid item xs={12}>
+                        <Card>
+                            <CardHeader title='Month, Year and Quarter' />
+                            <CardContent>
+                                <Box textAlign="center">
+                                    <MonthYearQuarterPicker />
+                                </Box>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                </Grid>
+            </div>
+            <div style={{ backgroundColor: '#f5f5f5', padding: '20px' }}>
+                <Grid container spacing={3} className='match-height'>
+                    <Grid item xs={12}>
+                        <Card>
+                            <CardHeader title='Options' />
+                            <CardContent>
+                                <Box textAlign="center">
+                                    <OptionPicker/>
                                 </Box>
                             </CardContent>
                         </Card>
