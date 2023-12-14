@@ -21,7 +21,7 @@ import Select from "../Pages/form/formElement/select";
 import CheckBox from "../Pages/form/formElement/checkBox";
 import RadioGroup from "../Pages/form/formElement/radioGroup";
 import Pickers from "../Pages/form/formElement/picker/index.js";
-
+import CustomInputs from "../Pages/custominputs/index.js";
 
 
 import ApexChart from "../../src/Pages/Charts/index";
@@ -47,6 +47,7 @@ function MainRoutes() {
       <Route path="/form-elements/checkbox" element={<CheckBox/>}/>
       <Route path="/form-elements/radio" element={<RadioGroup/>}/>
       <Route path="/form-elements/datePicker" element={<Pickers/>}/>
+      <Route path="/form-elements/custominputs" element={<CustomInputs/>}/>
     </Routes>
   );
 }

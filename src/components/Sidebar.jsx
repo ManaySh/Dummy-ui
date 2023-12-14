@@ -604,11 +604,11 @@ const formElementsItems = [
     path: "/form-elements/radio",
     icon : <ToggleOnIcon/>
   },
-  // {
-  //   label: "Custom Inputs",
-  //   path: "/form-elements/customInput",
-  //   icon: <InputIcon/>
-  // },
+  {
+    label: "Custom Inputs",
+    path: "/form-elements/custominputs",
+    icon: <InputIcon/>
+  },
   // {
   //   label: "Text Area",
   //   path: "/form-elements/textArea",
