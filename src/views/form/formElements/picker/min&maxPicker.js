@@ -1,49 +1,46 @@
-import React, { useState } from 'react';
-import DatePicker from 'react-datepicker';
-import subDays from 'date-fns/subDays';
-import addDays from 'date-fns/addDays';
-import 'react-datepicker/dist/react-datepicker.css';
+import { useState} from 'react'
+// ** Third Party Imports
+import subDays from 'date-fns/subDays'
+import addDays from 'date-fns/addDays'
+import DatePicker from 'react-datepicker'
 
-const MinMaxDates = () => {
-  const [minDate, setMinDate] = useState(null);
-  const [maxDate, setMaxDate] = useState(null);
 
-  // CustomInput component to apply styles to the input
-  const CustomInput = ({ value, onClick, placeholder }) => (
-    <input
-      value={value}
-      onClick={onClick}
-      placeholder={placeholder}  // Use the placeholder directly
-      style={{ width: '100%', padding: '10px' }}
-    />
-  );
+import CustomInput from './customInput'
+
+const PickersMinMax = ({ popperPlacement }) => {
+  // ** States
+  const [minDate, setMinDate] = useState(new Date())
+  const [maxDate, setMaxDate] = useState(new Date())
+
 
   return (
-    <div style={{ display: 'flex', gap: '100px' }}>
+    <div style={{ display: 'flex', gap:"100px" }} className='demo-space-x'>
       <div>
         <label>Min Date</label>
-        <br />
+        <br/>
         <DatePicker
+          id='min-date'
           selected={minDate}
-          onChange={(date) => setMinDate(date)}
           minDate={subDays(new Date(), 5)}
-          placeholderText="Select a date after 5 days ago"
-          customInput={<CustomInput placeholder="Select a date after 5 days ago" />}
+          popperPlacement={popperPlacement}
+          onChange={date => setMinDate(date)}
+          customInput={<CustomInput/>}
         />
       </div>
       <div>
         <label>Max Date</label>
-        <br />
+        <br/>
         <DatePicker
+          id='max-date'
           selected={maxDate}
-          onChange={(date) => setMaxDate(date)}
           maxDate={addDays(new Date(), 5)}
-          placeholderText="Select a date before 5 days in the future"
-          customInput={<CustomInput placeholder="Select a date before 5 days in the future" />}
+          popperPlacement={popperPlacement}
+          onChange={date => setMaxDate(date)}
+          customInput={<CustomInput/>}
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default MinMaxDates;
+export default PickersMinMax

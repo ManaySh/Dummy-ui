@@ -1,20 +1,10 @@
-// import React from 'react'
-
-// const DaterangePicker = () => {
-//   return (
-//     <div>daterangePicker</div>
-//   )
-// }
-
-// export default DaterangePicker
-
-
-import { useState, forwardRef } from 'react'
+import { useState } from 'react'
 // ** Third Party Imports
-import format from 'date-fns/format'
 import addDays from 'date-fns/addDays'
 import DatePicker from 'react-datepicker'
-import TextField from '@mui/material/TextField'
+
+
+import CustomInput from './customInput'
 
 const DaterangePicker = ({ popperPlacement }) => {
     // ** States
@@ -33,26 +23,7 @@ const DaterangePicker = ({ popperPlacement }) => {
     setStartDateRange(start)
     setEndDateRange(end)
   }
-  const CustomTextField = forwardRef((props, ref) => {
-    // ** Props
-    const { size = 'small', InputLabelProps, ...rest } = props
-  
-    return (
-      <TextField
-        size={size}
-        inputRef={ref}
-        {...rest}
-        variant='filled'
-        InputLabelProps={{ ...InputLabelProps, shrink: true }}
-      />
-    )
-  })
-  const CustomInput = forwardRef((props, ref) => {
-    const startDate = format(props.start, 'MM/dd/yyyy')
-    const endDate = props.end !== null ? format(props.end, 'MM/dd/yyyy') : null;
-    const value = `${startDate}${endDate !== null ? ` - ${endDate}` : ''}`;
-    return <CustomTextField inputRef={ref} label={props.label || ''} {...props} value={value} />
-  })
+
 
   return (
     <div style={{display:"flex", gap:"100px"}}>
