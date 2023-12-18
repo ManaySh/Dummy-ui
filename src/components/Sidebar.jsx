@@ -629,11 +629,11 @@ const formElementsItems = [
     path : "/form-elements/switch",
     icon : <ToggleOffIcon/>
   },
-  {
-    label: "File Uploader",
-    path: "/form-elements/fileUploader",
-    icon: <FileUploadIcon/>
-  },
+  // {
+  //   label: "File Uploader",
+  //   path: "/form-elements/fileUploader",
+  //   icon: <FileUploadIcon/>
+  // },
   {
     label: "Slider",
     path: "/form-elements/slider",

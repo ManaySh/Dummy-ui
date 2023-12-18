@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Dialog from "../Pages/DialogInfo/index.jsx";
 import AlertInfo from "../Pages/AlertInfo/index.jsx";
-import Switches from "../Pages/Switches";
+// import Switches from "../Pages/Switches";
 import Rating from "../Pages/Rating";
 import Cards from "../Pages/cards/index";
 import UserList from "../Pages/UserList";
@@ -21,6 +21,8 @@ import Select from "../Pages/form/formElement/select";
 import CheckBox from "../Pages/form/formElement/checkBox";
 import RadioGroup from "../Pages/form/formElement/radioGroup";
 import Pickers from "../Pages/form/formElement/picker/index.js";
+import Switches from "../Pages/form/formElement/switch/index.js";
+import Slider from "../Pages/form/formElement/slider/index.js";
 
 
 
@@ -30,7 +32,7 @@ function MainRoutes() {
     <Routes>
       <Route path="/components/dialog-info" element={<Dialog />} />
       <Route path="/components/alert" element={<AlertInfo />} />
-      <Route path="/components/switches" element={<Switches />} />
+      {/* <Route path="/components/switches" element={<Switches />} /> */}
       <Route path="/components/ratings" element={<Rating />} />
       <Route path="/components/tables" element={<UserList />} />
       <Route path="/components/pagination" element={<Paginations />} />
@@ -47,6 +49,8 @@ function MainRoutes() {
       <Route path="/form-elements/checkbox" element={<CheckBox/>}/>
       <Route path="/form-elements/radio" element={<RadioGroup/>}/>
       <Route path="/form-elements/datePicker" element={<Pickers/>}/>
+      <Route path="/form-elements/switch" element={<Switches/>}/>
+      <Route path="/form-elements/slider" element={<Slider/>}/>
     </Routes>
   );
 }
