@@ -25,8 +25,7 @@ import Switches from "../Pages/form/formElement/switch/index.js";
 import Slider from "../Pages/form/formElement/slider/index.js";
 import InputMask from "../Pages/form/formElement/input-mask/index.js";
 import CustomInputs from "../Pages/form/formElement/custominputs/index.js";
-
-
+import FileUploaders from "../Pages/form/formElement/fileUploader/index.js";
 
 import ApexChart from "../../src/Pages/Charts/index";
 function MainRoutes() {
@@ -55,6 +54,7 @@ function MainRoutes() {
       <Route path="/form-elements/slider" element={<Slider/>}/>
       <Route path="/form-elements/inputMask" element={<InputMask/>}/>
       <Route path="/form-elements/custominputs" element={<CustomInputs/>}/>
+      <Route path="/form-elements/fileUploader" element={<FileUploaders/>}/>
     </Routes>
   );
 }
