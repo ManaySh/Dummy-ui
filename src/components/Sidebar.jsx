@@ -639,10 +639,10 @@ const formElementsItems = [
     path: "/form-elements/slider",
     icon: <LinearScaleIcon/>
   },
-  // {
-  //   label: "Input Mask",
-  //   path: "/form-elements/inputMask"
-  // }
+  {
+    label: "Input Mask",
+    path: "/form-elements/inputMask"
+  }
 ]
 
 
