@@ -7,8 +7,10 @@ import Typography from '@mui/material/Typography'
 // import CustomRadio from '../../views/form/formElements/customInputs/customRadio
 import CustomCheckBox from '../../../../views/form/formElements/customInputs/CustomCheckBox';
 import CustomRadio from '../../../../views/form/formElements/customInputs/customRadio';
-
-
+import CustomCheckBoxWithIcon from '../../../../views/form/formElements/customInputs/CustomCheckBoxWithIcon';
+import CustomRadioWithIcon from '../../../../views/form/formElements/customInputs/CustomRadioWithIcon';
+import CustomCheckBoxImage from '../../../../views/form/formElements/customInputs/CustomCheckBoxImage';
+import CustomRadioImage from '../../../../views/form/formElements/customInputs/CustomRadioImage';
 
 const CustomInputs = () => {
   return (
@@ -18,6 +20,18 @@ const CustomInputs = () => {
       </Grid>
       <Grid item xs={12} sm={6} >
         <CustomRadio />
+      </Grid>
+      <Grid item xs={12} sm={6} >
+        <CustomCheckBoxWithIcon />
+      </Grid>
+      <Grid item xs={12} sm={6} >
+        <CustomRadioWithIcon />
+      </Grid>
+      <Grid item xs={12} sm={6} >
+        <CustomCheckBoxImage />
+      </Grid>
+      <Grid item xs={12} sm={6} >
+        <CustomRadioImage />
       </Grid>
       {/* <Grid item xs={12} sm={6} md={4}>
         <OutlinedCard />

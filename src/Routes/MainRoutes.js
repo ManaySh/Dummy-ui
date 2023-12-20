@@ -28,6 +28,7 @@ import CustomInputs from "../Pages/form/formElement/custominputs/index.js";
 import TextArea from "../Pages/form/formElement/textArea/index.js";
 
 
+import FileUploaders from "../Pages/form/formElement/fileUploader/index.js";
 
 import ApexChart from "../../src/Pages/Charts/index";
 function MainRoutes() {
@@ -57,6 +58,7 @@ function MainRoutes() {
       <Route path="/form-elements/inputMask" element={<InputMask/>}/>
       <Route path="/form-elements/custominputs" element={<CustomInputs/>}/>
       <Route path="/form-elements/textArea" element={<TextArea/>}/>
+      <Route path="/form-elements/fileUploader" element={<FileUploaders/>}/>
     </Routes>
   );
 }
