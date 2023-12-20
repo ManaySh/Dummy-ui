@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography'
 // ** Demo Components Imports
 import SingleFileUploader from '../../../../views/form/formElements/fileUploader/SingleFileUpload'
 import MultipleFileUploader from '../../../../views/form/formElements/fileUploader/MultipleFileUpload'
-
+import UploadFileWithRestriction from '../../../../views/form/formElements/fileUploader/UploadFileWithRestriction'
 const FileUploader = () => {
   return (
     <Grid container spacing={6}>
@@ -18,6 +18,9 @@ const FileUploader = () => {
       </Grid>
       <Grid item xs={12}>
         <MultipleFileUploader />
+      </Grid>
+      <Grid item xs={12}>
+        <UploadFileWithRestriction />
       </Grid>
     </Grid>
   )
