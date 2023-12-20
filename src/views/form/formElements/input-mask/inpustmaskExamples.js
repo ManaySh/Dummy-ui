@@ -12,15 +12,17 @@ const InputLabel = styled(MuiInputLabel)(({ theme }) => ({
   maxWidth: 'max-content',
   marginBottom: theme.spacing(1),
   color: theme.palette.text.primary,
-  fontSize: theme.typography.body2.fontSize
+  fontSize: theme.typography.body2.fontSize,
+  
 }))
+
 
 const InputMaskExamples = () => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12} sm={6} lg={4}>
         <InputLabel htmlFor='credit-card'>Credit Card</InputLabel>
-        <Cleave id='credit-card' options={{ creditCard: true }} placeholder='0000 0000 0000 0000' />
+        <Cleave  id='credit-card' options={{ creditCard: true }} placeholder='0000 0000 0000 0000' />
       </Grid>
       <Grid item xs={12} sm={6} lg={4}>
         <InputLabel htmlFor='phone-number'>Phone Number</InputLabel>
@@ -64,7 +66,7 @@ const InputMaskExamples = () => {
       </Grid>
       <Grid item xs={12} sm={6} lg={4}>
         <InputLabel htmlFor='prefix'>Prefix</InputLabel>
-        <Cleave id='prefix' options={{ prefix: '+63', blocks: [3, 3, 3, 4], uppercase: true }} />
+        <Cleave id='prefix' options={{ prefix: '+91', blocks: [3, 3, 3, 4], uppercase: true }} />
       </Grid>
     </Grid>
   )

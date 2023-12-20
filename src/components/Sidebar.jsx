@@ -609,11 +609,11 @@ const formElementsItems = [
     path: "/form-elements/custominputs",
     icon: <InputIcon/>
   },
-  // {
-  //   label: "Text Area",
-  //   path: "/form-elements/textArea",
-  //   icon: <NotesIcon/>
-  // },
+  {
+    label: "Text Area",
+    path: "/form-elements/textArea",
+    icon: <NotesIcon/>
+  },
   // {
   //   label: "Auto Complete",
   //   path: "/form-elements/autoComplete",
