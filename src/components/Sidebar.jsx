@@ -615,11 +615,11 @@ const formElementsItems = [
     path: "/form-elements/custominputs",
     icon: <InputIcon />,
   },
-  // {
-  //   label: "Text Area",
-  //   path: "/form-elements/textArea",
-  //   icon: <NotesIcon/>
-  // },
+  {
+    label: "Text Area",
+    path: "/form-elements/textArea",
+    icon: <NotesIcon/>
+  },
   // {
   //   label: "Auto Complete",
   //   path: "/form-elements/autoComplete",
@@ -635,21 +635,23 @@ const formElementsItems = [
     path: "/form-elements/switch",
     icon: <ToggleOffIcon />,
   },
-  // {
-  //   label: "File Uploader",
-  //   path: "/form-elements/fileUploader",
-  //   icon: <FileUploadIcon/>
-  // },
+  {
+    label: "File Uploader",
+    path: "/form-elements/fileUploader",
+    icon: <FileUploadIcon/>
+  },
   {
     label: "Slider",
     path: "/form-elements/slider",
     icon: <LinearScaleIcon />,
   },
-  // {
-  //   label: "Input Mask",
-  //   path: "/form-elements/inputMask"
-  // }
-];
+  {
+    label: "Input Mask",
+    path: "/form-elements/inputMask"
+  }
+]
+
+
 
 const drawerWidth = 220;
 

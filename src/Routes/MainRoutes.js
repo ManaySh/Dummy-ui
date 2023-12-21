@@ -23,6 +23,13 @@ import RadioGroup from "../Pages/form/formElement/radioGroup";
 import Pickers from "../Pages/form/formElement/picker/index.js";
 import Switches from "../Pages/form/formElement/switch/index.js";
 import Slider from "../Pages/form/formElement/slider/index.js";
+import InputMask from "../Pages/form/formElement/input-mask/index.js";
+import CustomInputs from "../Pages/form/formElement/custominputs/index.js";
+import TextArea from "../Pages/form/formElement/textArea/index.js";
+
+
+import FileUploaders from "../Pages/form/formElement/fileUploader/index.js";
+
 import ApexChart from "../../src/Pages/Charts/index";
 import Clipboard from "../Pages/clipboard/index.jsx";
 function MainRoutes() {
