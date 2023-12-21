@@ -23,10 +23,8 @@ import RadioGroup from "../Pages/form/formElement/radioGroup";
 import Pickers from "../Pages/form/formElement/picker/index.js";
 import Switches from "../Pages/form/formElement/switch/index.js";
 import Slider from "../Pages/form/formElement/slider/index.js";
-
-
-
 import ApexChart from "../../src/Pages/Charts/index";
+import Clipboard from "../Pages/clipboard/index.jsx";
 function MainRoutes() {
   return (
     <Routes>
@@ -37,20 +35,22 @@ function MainRoutes() {
       <Route path="/components/tables" element={<UserList />} />
       <Route path="/components/pagination" element={<Paginations />} />
       <Route path="/components/buttons" element={<Buttons />} />
-      <Route path="/components/progress" element={<Progress/>} />
-      <Route path="/components/snackbar" element={<Snackbars/>}/>
+      <Route path="/components/progress" element={<Progress />} />
+      <Route path="/components/snackbar" element={<Snackbars />} />
       <Route path="/surfaces/cards" element={<Cards />} />
       <Route path="/surfaces/accordions" element={<Accordions />} />
       <Route path="/landingPage" element={<LandingPage />} />
       <Route path="/components/charts" element={<ApexChart />} />
-       {/* Forms */}
-       <Route path="/form-elements/textfield" element={<TextFields/>}/>
-      <Route path="/form-elements/select" element={<Select/>}/>
-      <Route path="/form-elements/checkbox" element={<CheckBox/>}/>
-      <Route path="/form-elements/radio" element={<RadioGroup/>}/>
-      <Route path="/form-elements/datePicker" element={<Pickers/>}/>
-      <Route path="/form-elements/switch" element={<Switches/>}/>
-      <Route path="/form-elements/slider" element={<Slider/>}/>
+      <Route path="/components/clipboard" element={<Clipboard />} />
+
+      {/* Forms */}
+      <Route path="/form-elements/textfield" element={<TextFields />} />
+      <Route path="/form-elements/select" element={<Select />} />
+      <Route path="/form-elements/checkbox" element={<CheckBox />} />
+      <Route path="/form-elements/radio" element={<RadioGroup />} />
+      <Route path="/form-elements/datePicker" element={<Pickers />} />
+      <Route path="/form-elements/switch" element={<Switches />} />
+      <Route path="/form-elements/slider" element={<Slider />} />
     </Routes>
   );
 }

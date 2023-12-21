@@ -418,13 +418,13 @@ import ListItem from "@mui/material/ListItem";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 
 // Icons
-import RestartAltIcon from '@mui/icons-material/RestartAlt';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import RestartAltIcon from "@mui/icons-material/RestartAlt";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import MicrosoftIcon from '@mui/icons-material/Microsoft';
-import AutoGraphIcon from '@mui/icons-material/AutoGraph';
-import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
+import MicrosoftIcon from "@mui/icons-material/Microsoft";
+import AutoGraphIcon from "@mui/icons-material/AutoGraph";
+import ExpandCircleDownIcon from "@mui/icons-material/ExpandCircleDown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTable } from "@fortawesome/free-solid-svg-icons";
 import KeyboardCommandKeyIcon from "@mui/icons-material/KeyboardCommandKey";
@@ -454,17 +454,18 @@ import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MailIcon from "@mui/icons-material/Mail";
-import DynamicFormIcon from '@mui/icons-material/DynamicForm';
-import DeselectIcon from '@mui/icons-material/Deselect';
-import ToggleOnIcon from '@mui/icons-material/ToggleOn';
-import InputIcon from '@mui/icons-material/Input';
-import NotesIcon from '@mui/icons-material/Notes';
-import RttIcon from '@mui/icons-material/Rtt';
-import DateRangeIcon from '@mui/icons-material/DateRange';
-import ToggleOffIcon from '@mui/icons-material/ToggleOff';
-import FileUploadIcon from '@mui/icons-material/FileUpload';
-import LinearScaleIcon from '@mui/icons-material/LinearScale';
-import RoomServiceIcon from '@mui/icons-material/RoomService';
+import DynamicFormIcon from "@mui/icons-material/DynamicForm";
+import DeselectIcon from "@mui/icons-material/Deselect";
+import ToggleOnIcon from "@mui/icons-material/ToggleOn";
+import InputIcon from "@mui/icons-material/Input";
+import NotesIcon from "@mui/icons-material/Notes";
+import RttIcon from "@mui/icons-material/Rtt";
+import DateRangeIcon from "@mui/icons-material/DateRange";
+import ToggleOffIcon from "@mui/icons-material/ToggleOff";
+import FileUploadIcon from "@mui/icons-material/FileUpload";
+import LinearScaleIcon from "@mui/icons-material/LinearScale";
+import RoomServiceIcon from "@mui/icons-material/RoomService";
+import ContentPasteSearchIcon from "@mui/icons-material/ContentPasteSearch";
 const SidebarItems = [
   {
     label: "Alert",
@@ -481,6 +482,12 @@ const SidebarItems = [
     path: "/components/dialog-info",
     icon: <AlbumIcon />,
   },
+  {
+    label: "Clipboard",
+    path: "/components/clipboard",
+    icon: <ContentPasteSearchIcon />,
+  },
+  ,
   {
     label: "Pagination",
     path: "/components/pagination",
@@ -514,19 +521,18 @@ const SidebarItems = [
   {
     label: "Progress",
     path: "/components/progress",
-    icon: <RestartAltIcon/>
+    icon: <RestartAltIcon />,
   },
   {
     label: "checkbox",
     path: "/components/checkboxes",
-    icon: <CheckCircleIcon/>
-   
+    icon: <CheckCircleIcon />,
   },
   {
     label: "Snackbar",
     path: "components/snackbar",
-    icon: <RoomServiceIcon/>
-  }
+    icon: <RoomServiceIcon />,
+  },
 ];
 
 const surfacesItems = [
@@ -579,7 +585,7 @@ const surfacesItems = [
   //   label: "checkbox",
   //   path: "/surfaces/checkboxes",
   //   icon: <CheckCircleIcon/>
-   
+
   // },
 ];
 
@@ -587,27 +593,27 @@ const formElementsItems = [
   {
     label: "Text Field",
     path: "/form-elements/textfield",
-    icon: <TextFieldsIcon/>
+    icon: <TextFieldsIcon />,
   },
   {
     label: "Select",
     path: "/form-elements/select",
-    icon: <DeselectIcon/>
+    icon: <DeselectIcon />,
   },
   {
     label: "Checkbox",
     path: "/form-elements/checkbox",
-    icon: <CheckBoxIcon/>
+    icon: <CheckBoxIcon />,
   },
   {
     label: "Radio",
     path: "/form-elements/radio",
-    icon : <ToggleOnIcon/>
+    icon: <ToggleOnIcon />,
   },
   {
     label: "Custom Inputs",
     path: "/form-elements/custominputs",
-    icon: <InputIcon/>
+    icon: <InputIcon />,
   },
   // {
   //   label: "Text Area",
@@ -622,12 +628,12 @@ const formElementsItems = [
   {
     label: "Date Pickers",
     path: "/form-elements/datePicker",
-    icon: <DateRangeIcon/>
+    icon: <DateRangeIcon />,
   },
   {
     label: "Switch",
-    path : "/form-elements/switch",
-    icon : <ToggleOffIcon/>
+    path: "/form-elements/switch",
+    icon: <ToggleOffIcon />,
   },
   // {
   //   label: "File Uploader",
@@ -637,15 +643,13 @@ const formElementsItems = [
   {
     label: "Slider",
     path: "/form-elements/slider",
-    icon: <LinearScaleIcon/>
+    icon: <LinearScaleIcon />,
   },
   // {
   //   label: "Input Mask",
   //   path: "/form-elements/inputMask"
   // }
-]
-
-
+];
 
 const drawerWidth = 220;
 
@@ -721,8 +725,7 @@ export default function Sidebar() {
   const [open, setOpen] = React.useState(false);
   const [componentsOpen, setComponentsOpen] = React.useState(false);
   const [surfacesOpen, setSurfacesOpen] = React.useState(false);
-  const [formElementsOpen, setFormElementsOpen] = React.useState(false)
-
+  const [formElementsOpen, setFormElementsOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -741,9 +744,8 @@ export default function Sidebar() {
   };
 
   const handleFormElementsToggle = () => {
-    setFormElementsOpen(!formElementsOpen)
-  }
-
+    setFormElementsOpen(!formElementsOpen);
+  };
 
   const location = useLocation();
   const { pathname } = location;
@@ -875,7 +877,7 @@ export default function Sidebar() {
 
               {/* Dropdown menu for "Components" */}
               {/* {pathname.startsWith("/components") && componentsOpen && ( */}
-              { componentsOpen && (
+              {componentsOpen && (
                 <div>
                   {SidebarItems.map((item) => (
                     <div key={item.label}>
@@ -960,7 +962,7 @@ export default function Sidebar() {
                   {surfacesOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
                 </ListItemButton>
               </div>
-              { surfacesOpen && (
+              {surfacesOpen && (
                 <div>
                   {surfacesItems.map((item) => (
                     <div key={item.label}>
@@ -1018,9 +1020,8 @@ export default function Sidebar() {
 
               {/* form-elements */}
 
-
-                 {/* form-elements menu with dropdown effect */}
-                 <div onClick={handleFormElementsToggle}>
+              {/* form-elements menu with dropdown effect */}
+              <div onClick={handleFormElementsToggle}>
                 <ListItemButton
                   sx={{
                     minHeight: 48,
@@ -1052,7 +1053,7 @@ export default function Sidebar() {
               </div>
 
               {/* Dropdown menu for "form-elements" */}
-              { formElementsOpen && (
+              {formElementsOpen && (
                 <div>
                   {formElementsItems.map((item) => (
                     <div key={item.label}>
